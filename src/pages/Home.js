@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/global.css';
 import '../styles/home.css';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
