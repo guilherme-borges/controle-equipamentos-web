@@ -2,14 +2,15 @@ import React from 'react';
 import '../styles/global.css';
 import '../styles/sidebar.css';
 import { FiHome, FiEdit, FiBarChart2 } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 function Sidebar() {
   return (
     <aside className="sidebar-container">
       <nav>
-        <a href=""><FiHome className="sidebar-item-icon" />Início</a>
-        <a href=""><FiEdit className="sidebar-item-icon" />Equipamentos</a>
-        <a href=""><FiBarChart2 className="sidebar-item-icon" />Relatórios</a>
+        <Link to="/" className="sidebar-nav-item"><FiHome className="sidebar-item-icon" />Início</Link>
+        <Link to="/equipamentos" className="sidebar-nav-item"><FiEdit className="sidebar-item-icon" />Equipamentos</Link>
+        <a href="" className="sidebar-nav-item"><FiBarChart2 className="sidebar-item-icon" />Relatórios</a>
       </nav>
     </aside>
   );
