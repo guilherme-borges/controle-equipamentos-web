@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F1F1F1;
+}
+
+body,
+input,
+button,
+a,
+span,
+textarea {
+    font: 400 18px Roboto, sans-serif;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

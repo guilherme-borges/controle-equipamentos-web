@@ -1,0 +1,10 @@
+.container {
+    display: flex;
+}
+
+.container main {
+    margin-left: 337px;
+    width: 100%;
+    margin-top: 60px;
+    padding: 30px;
+}
