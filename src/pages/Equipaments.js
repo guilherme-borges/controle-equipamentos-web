@@ -1,4 +1,5 @@
 import React from 'react';
+import { FiEdit, FiTrash2 } from 'react-icons/fi';
 import '../styles/equipaments.css';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
@@ -10,7 +11,10 @@ function Equipaments() {
       <div className="container">
         <Sidebar />
         <main>
-          <h1>Equipamentos</h1>
+          <div className="buttons-container">
+            <h1>Equipamentos</h1>
+            <button className="button">Novo</button>
+          </div>
           <table className="content-table">
             <thead>
               <tr>
@@ -20,6 +24,8 @@ function Equipaments() {
                 <th>Local</th>
                 <th>Responsável</th>
                 <th>Status</th>
+                <th>Editar</th>
+                <th>Excluir</th>
               </tr>
             </thead>
             <tbody>
@@ -29,7 +35,9 @@ function Equipaments() {
                 <td>d68dsvs8vd8s0v6s</td>
                 <td>Sede</td>
                 <td>TI</td>
-                <td>Sem uso</td>
+                <td>Sem Uso</td>
+                <td><FiEdit className="button btn-edit" /></td>
+                <td><FiTrash2 className="button btn-delete" /></td>
               </tr>
               <tr>
                 <td>1</td>
@@ -37,7 +45,9 @@ function Equipaments() {
                 <td>d68dsvs8vd8s0v6s</td>
                 <td>Sede</td>
                 <td>TI</td>
-                <td>Sem uso</td>
+                <td>Sem Uso</td>
+                <td><FiEdit className="button btn-edit" /></td>
+                <td><FiTrash2 className="button btn-delete" /></td>
               </tr>
               <tr>
                 <td>1</td>
@@ -45,31 +55,9 @@ function Equipaments() {
                 <td>d68dsvs8vd8s0v6s</td>
                 <td>Sede</td>
                 <td>TI</td>
-                <td>Sem uso</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Mouse sem fio</td>
-                <td>d68dsvs8vd8s0v6s</td>
-                <td>Sede</td>
-                <td>TI</td>
-                <td>Sem uso</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Mouse sem fio</td>
-                <td>d68dsvs8vd8s0v6s</td>
-                <td>Sede</td>
-                <td>TI</td>
-                <td>Sem uso</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Mouse sem fio</td>
-                <td>d68dsvs8vd8s0v6s</td>
-                <td>Sede</td>
-                <td>TI</td>
-                <td>Sem uso</td>
+                <td>Sem Uso</td>
+                <td><FiEdit className="button btn-edit" /></td>
+                <td><FiTrash2 className="button btn-delete" /></td>
               </tr>
             </tbody>
           </table>

@@ -16,15 +16,17 @@
 }
 
 .sidebar-container nav a {
-    height: 50px;
+    height: 45px;
     display: flex;
     align-items: center;
     transition: 0.2s;
     padding-left: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
 }
 
 .sidebar-container nav a:hover {
-    background-color: #fbfbfb;
+    background-color: #e4e4e4;
 }
 
 .sidebar-container .logo {
