@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import api from '../services/api';
 import { FiEdit, FiTrash2 } from 'react-icons/fi';
 import '../styles/equipaments.css';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 
 function Equipaments() {
+
+  const [id, setId] = useState(0);
+  const [name, setName] = useState('');
+  const [serialNumber, setSerialNumber] = useState('');
+  const [location, setLocation] = useState('');
+  const [responsible, setResponsible] = useState('');
+  const [status, setStatus] = useState(true);
+  const [equipaments, setEquipaments] = useState([]);
+
+  useEffect(() => {
+    loadEquipaments();
+  }, []);
+
+  async function loadEquipaments() {
+    const response = await api.get('/equipaments');
+    setEquipaments(response.data);
+  }
+
   return (
     <>
       <Header />
@@ -29,36 +48,18 @@ function Equipaments() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>1</td>
-                <td>Mouse sem fio</td>
-                <td>d68dsvs8vd8s0v6s</td>
-                <td>Sede</td>
-                <td>TI</td>
-                <td>Sem Uso</td>
-                <td><FiEdit className="button btn-edit" /></td>
-                <td><FiTrash2 className="button btn-delete" /></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Mouse sem fio</td>
-                <td>d68dsvs8vd8s0v6s</td>
-                <td>Sede</td>
-                <td>TI</td>
-                <td>Sem Uso</td>
-                <td><FiEdit className="button btn-edit" /></td>
-                <td><FiTrash2 className="button btn-delete" /></td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>Mouse sem fio</td>
-                <td>d68dsvs8vd8s0v6s</td>
-                <td>Sede</td>
-                <td>TI</td>
-                <td>Sem Uso</td>
-                <td><FiEdit className="button btn-edit" /></td>
-                <td><FiTrash2 className="button btn-delete" /></td>
-              </tr>
+              {equipaments.map(equipament => (
+                <tr key={equipament.id}>
+                  <td>{equipament.id}</td>
+                  <td>{equipament.name}</td>
+                  <td>{equipament.serialNumber}</td>
+                  <td>{equipament.location}</td>
+                  <td>{equipament.responsible}</td>
+                  <td>{equipament.status}</td>
+                  <td><FiEdit className="button btn-edit" /></td>
+                  <td><FiTrash2 className="button btn-delete" /></td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </main>
