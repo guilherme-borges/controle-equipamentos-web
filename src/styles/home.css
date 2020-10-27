@@ -3,8 +3,9 @@
 }
 
 .container main {
-    margin-left: 207px;
+    margin-left: 15%;
     width: 100%;
     margin-top: 60px;
     padding: 30px;
+    border: 1px solid red;
 }
