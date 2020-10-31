@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import api from '../services/api';
-import { FiEdit, FiTrash2 } from 'react-icons/fi';
+import { FiEdit, FiTrash2, FiX } from 'react-icons/fi';
 import '../styles/equipaments.css';
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
@@ -15,6 +15,7 @@ function Equipaments() {
   const [responsible, setResponsible] = useState('');
   const [status, setStatus] = useState(true);
   const [equipaments, setEquipaments] = useState([]);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   useEffect(() => {
     loadEquipaments();
@@ -25,11 +26,29 @@ function Equipaments() {
     setEquipaments(response.data);
   }
 
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
   return (
     <div className="equipaments-container">
-      {isModalVisible ? <Modal /> : null}
+      {isModalVisible ? (
+        <Modal>
+          <div className="modal-container-main">
+            <div className="modal-header">
+              <h1>Equipamentos</h1>
+              <button onClick={() => setIsModalVisible(false)} className="btn-close">
+                <FiX size={24} />
+              </button>
+            </div>
+            <form className="modal-content">
+              <input type="text" placeholder="Nome" />
+              <input type="text" placeholder="Número de série" />
+              <input type="text" placeholder="Local" />
+              <input type="text" placeholder="Responsável" />
+            </form>
+          </div>
+          <div className="modal-footer">
+            <button className="button button-md">Salvar</button>
+          </div>
+        </Modal>
+      ) : null}
       <Header />
       <Sidebar />
       <main>
