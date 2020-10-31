@@ -1,9 +1,11 @@
-.container {
+.home-container {
     display: flex;
+    width: 100vw;
+    height: 100vh;
 }
 
-.container main {
-    margin-left: 207px;
+.home-container main {
+    margin-left: 15%;
     width: 100%;
     margin-top: 60px;
     padding: 30px;

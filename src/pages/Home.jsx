@@ -5,15 +5,13 @@ import Header from '../components/Header';
 
 function Home() {
   return (
-    <>
+    <div className="home-container">
       <Header />
-      <div className="container">
-        <Sidebar />
-        <main>
-          <h1>Home</h1>
-        </main>
-      </div>
-    </>
+      <Sidebar />
+      <main>
+        <h1>Home</h1>
+      </main>
+    </div>
   );
 }
 
